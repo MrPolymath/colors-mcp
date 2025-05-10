@@ -63,10 +63,14 @@ const handler = createMcpHandler(
               { type: "text", text: `Converted color: ${toFormat === "hex" ? result : `${toFormat}(${result})`}` },
             ],
           };
-        } catch (error: any) {
+        } catch (error: unknown) {
+          let message = "Unknown error";
+          if (error instanceof Error) {
+            message = error.message;
+          }
           return {
             content: [
-              { type: "text", text: `Error converting color: ${error.message}` },
+              { type: "text", text: `Error converting color: ${message}` },
             ],
           };
         }
