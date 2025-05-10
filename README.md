@@ -19,7 +19,7 @@ To run locally:
 ## Using with Cursor
 To use with cursor, edit your `mcp.json` with:
 ```
-"color-mmcp": {
+"color-mcp": {
     "url": "https://colors-mcp.vercel.app/api/sse"
 }
 ```
